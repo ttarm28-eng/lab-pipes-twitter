@@ -126,8 +126,8 @@ In this case, we'll need to use `grep` to filter the output of `ls` to keep only
 > Write a one line shell command that returns the number of days worth of data (i.e. the number of zip files) in the twitter dataset.
 > Edit the code block below with your command and its output
 > ```
-> $ #place command here
-> place output here
+> $ ls '/data/Twitter dataset' | grep 'zip$' | wc -l
+> 1887
 > ```
 
 ## Part 2: Counting the Tweets
