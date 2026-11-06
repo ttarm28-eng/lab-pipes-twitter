@@ -429,8 +429,17 @@ Notice that many of these tweets are in non-English languages.
 > Write a one line shell command that returns the name of the location that the first 10 tweets were sent from on 1 April 2020.
 > Edit the code block below with your command and its output
 > ```
-> $ #place command here
-> place output here
+> $ unzip -p '/data/Twitter dataset/geoTwitter20-04-01.zip' | head -n10 | jq '.["place"]["full_name"]'
+> "San José, Costa Rica"
+"Phoenix, AZ"
+"Cibitung, Indonesia"
+null
+"Brasília, Brasil"
+null
+"São Paulo, Brasil"
+"Riyadh, Kingdom of Saudi Arabia"
+"Queens, NY"
+"Dorsten, Deutschland"
 > ```
 
 # Part 5: Interesting queries
@@ -467,8 +476,25 @@ so it's fine if the text appears inside of a hashtag.
 > (This was the last day of in-person classes that semester.)
 > Edit the code block below with your command and its output
 > ```
-> $ #place command here
-> place output here
+> $ unzip -p '/data/Twitter dataset/geoTwitter20-03-12.zip' | grep "Claremont, CA" | grep -i "coronavirus" | jq '.["text"]'
+> "Huh?!🦦"
+"Ready to battle Coronavirus. 😤😤😤 https://t.co/DXrh3suIOH"
+"I wanna live Bitch 😂😂😂"
+"The class of 2020 started their college career w/ the Trump election and will end it with a pandemic. #coronavirus #COVID2019"
+".....like Chili’s?!?"
+"You can feel it on the air.\n\nNo not Coronavirus cuz it isn’t airborne.\n\nI’m talking about people very slowly turning on AOC."
+"@ProfLBNielsen @pomonacollege Yes. There is an application to stay. Some of our international students cannot go ho… https://t.co/tYfxAujxLt"
+"When my coworker was calmly telling me how her son looked up conspiracy theories about Coronavirus https://t.co/ECLv7xsR0z"
+"I’ll make this my wallpaper for the whole year idc idc https://t.co/b3EMvzwUhB"
+"En Iran dicen que si te frotas aceite en el culo, te curas del coronavirus!!\nDe nada"
+"Rare W from the juice. #CoronavirusPandemic"
+"Todavía no me he pronunciado porque las cosas han cambiado mucho en estos días. Pero sí, en California estamos tamb… https://t.co/kVNIH3JlkT"
+"Keeping everyone safe with some common sense #coronavirus #covid19 #savvy109 @ Los Angeles, California https://t.co/gv4Y1P559Q"
+"💀"
+"https://t.co/lMnmKHbAEn"
+"It was me"
+"Gonna need statements and dates affected directly from you guys @STAPLESCenter @theforum plz and thank you"
+"Everyone at my work be like"
 > ```
 
 ## Submission
